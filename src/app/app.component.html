@@ -4,6 +4,10 @@
 	<div style="text-align:center">
  	 <h1>
   	 Haberler
+  	 
+  	 
+   
+  
   	</h1>
 	</div>
 	
@@ -26,18 +30,18 @@
 	<button type="submit" (click)="addList()"> Yazi Ekle</button>
 	</form>
 	
-	<div *ngIf="list != null">
-	<div *ngFor="let item of list">
+	<div *ngIf="list != null" >
+	<div *ngFor="let item of items | async" style="border: 1px solid black;">
 		<div>
-		<h1> Baslik</h1>
+		<h2> Baslik</h2>
 			{{item.baslik}}
 		</div>
 		<div>
-			<h1>Yazi</h1>
+			<h2>Yazi</h2>
 			{{item.yazi}}
 		</div>
 		<div>
-			<h1>Yazar</h1>
+			<h2>Yazar</h2>
 			{{item.yazar}}
 		</div>
 	</div>

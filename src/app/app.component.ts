@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {YaziService} from './service.yazi';
 import { FormGroup , FormControl, Validators,FormBuilder} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import {AngularFireDatabase,FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,14 @@ export class AppComponent {
   title = 'app';
   forms : FormGroup;
   list: any[] = [];
+  items: FirebaseListObservable<any[]>;
   
-  constructor(private yaziService: YaziService)
+  constructor(private yaziService: YaziService,db: AngularFireDatabase)
   {
+      this.items = db.list('/data');
+      
+      
+      
       this.getList();
       this.forms = new FormGroup({
           baslik : new FormControl(null,),
@@ -27,11 +33,12 @@ export class AppComponent {
   getList(){
       this.yaziService.getList().subscribe(
       response => {
-          console.log(response.json());
-    /*    var result = response.json();
-        this.list = result;
-        console.log("arda");
-        console.log(this.list);*/
+          console.log(response);
+          var result = response.json();
+          console.log(result.object);
+          console.log(this.items);
+          
+          
       }   ,
       error => {
           

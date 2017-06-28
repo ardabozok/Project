@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AppComponent } from './app.component';
 import {YaziService} from './service.yazi'
 
@@ -14,7 +16,9 @@ import {YaziService} from './service.yazi'
     BrowserModule,
     HttpModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase,"firstproject")
     
   ],
   providers: [YaziService],
