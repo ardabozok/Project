@@ -12,23 +12,33 @@ import {AngularFireDatabase,FirebaseListObservable } from 'angularfire2/database
 export class AppComponent {
   title = 'app';
   forms : FormGroup;
+  category : FormGroup;
   list: any[] = [];
   items: FirebaseListObservable<any[]>;
+  categoryList: FirebaseListObservable<any[]>;
   
   constructor(private yaziService: YaziService,db: AngularFireDatabase)
   {
       this.items = db.list('/data');
+      this.categoryList = db.list('/category');
       
       
       
-      this.getList();
+     // this.getList();
       this.forms = new FormGroup({
           baslik : new FormControl(null,),
           yazi: new FormControl(null),
           yazar : new FormControl(null)
       });
       
+      this.category = new FormGroup({
+          categoryName : new FormControl(null,),
+          
+      });
+      
   }
+  
+ 
   
   getList(){
       this.yaziService.getList().subscribe(
@@ -51,6 +61,19 @@ export class AppComponent {
   addList(){
       
       this.yaziService.addList(this.forms).subscribe(
+      response => {
+          console.log(response);
+          this.getList();
+      },
+      error =>{
+          console.log("error");
+      },
+      () => {}
+  )};
+  
+  addCategory(){
+      
+      this.yaziService.addCategory(this.category).subscribe(
       response => {
           console.log(response);
           this.getList();

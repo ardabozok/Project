@@ -26,4 +26,12 @@ export class YaziService{
        return this.http.post('https://firstproject-88f3a.firebaseio.com/data.json',yazi).map(res => res);
     } 
     
+    addCategory(form: FormGroup){
+        
+        var yazi = {};
+        yazi['categoryName'] = form.controls["categoryName"].value;
+       
+        return this.http.post('https://firstproject-88f3a.firebaseio.com/category.json',yazi).map(res => res);
+     }
+    
 }

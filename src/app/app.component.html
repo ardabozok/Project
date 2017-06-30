@@ -1,12 +1,38 @@
 <!--The whole content below can be removed with the new code.-->
 <div class="container">
 
+	 
+	 <div style="text-align:center">
+ 	 <h1>
+  	 Kategori Ekle
+  
+  	</h1>
+	</div>
+	
+		<form [formGroup]="category">
+		<div>
+		<label>Kategori Adi</label>
+		<input type="text" formControlName="categoryName">
+		</div>
+		
+		
+	
+	<button type="submit" (click)="addCategory()"> Kategori Ekle</button>
+	</form>
+	<h2> Kategoriler</h2>
+	<div *ngIf="list != null" >
+	<div *ngFor="let item of categoryList | async" style="border: 1px solid black;">
+		<div>
+		
+			{{item.categoryName}}
+		</div>
+		
+	</div>
+	
+	
 	<div style="text-align:center">
  	 <h1>
   	 Haberler
-  	 
-  	 
-   
   
   	</h1>
 	</div>
