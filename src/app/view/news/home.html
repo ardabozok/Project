@@ -27,7 +27,7 @@ arda
 						<td class="hide-on-mobile">{{item.yazar}}</td>
 						
 							
-						<td class="text-center action"><a [routerLink]="['/product/edit/' + item.id]" ><i class="material-icons" ></i>Duzenle</a></td>
-						<td class="text-center action"><a  (click)="delete(item.id)"><i class="material-icons" ></i>Sil</a></td>
+						<td class="text-center action"><a [routerLink]="['/product/edit/' + item.$key]" ><i class="material-icons" ></i>Duzenle</a></td>
+						<td class="text-center action"><a  (click)="delete(item.$key)"><i class="material-icons" ></i>Sil</a></td>
 					</tr>
 				</table>
