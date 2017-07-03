@@ -1,0 +1,33 @@
+arda
+
+	 <ul>
+  <li><a [routerLink]="['/home/']">Home</a></li>
+  <li><a [routerLink]="['/news/home/']">News</a></li>
+  <li><a href="#contact">Slider</a></li>
+  <li><a href="#about">Category</a></li>
+</ul>
+
+	
+	
+	
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" class="list-table">
+					<tr>
+						<th width="80">&nbsp;</th>
+						<th>Baslik</th>
+						<th class="hide-on-little" >Yazi</th>
+						<th  class="hide-on-mobile">Yazar</th>
+						
+						
+						
+					</tr>
+					<tr *ngFor="let item of items | async">
+						<td class="icon-cell"></td>
+						<td>	{{item.baslik}}</td>
+					  <td class="hide-on-little">{{item.yazi}}</td>
+						<td class="hide-on-mobile">{{item.yazar}}</td>
+						
+							
+						<td class="text-center action"><a [routerLink]="['/product/edit/' + item.id]" ><i class="material-icons" ></i>Duzenle</a></td>
+						<td class="text-center action"><a  (click)="delete(item.id)"><i class="material-icons" ></i>Sil</a></td>
+					</tr>
+				</table>

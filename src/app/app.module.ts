@@ -6,11 +6,15 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AppComponent } from './app.component';
-import {YaziService} from './service.yazi'
+import {YaziService} from './service.yazi';
+
+import {HomeComponent} from './controller/component.home';
+import {routing} from './app.routing';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +22,8 @@ import {YaziService} from './service.yazi'
     FormsModule,
     ReactiveFormsModule ,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebase,"firstproject")
+    AngularFireModule.initializeApp(environment.firebase,"firstproject"),
+    routing
     
   ],
   providers: [YaziService],

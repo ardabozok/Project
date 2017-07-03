@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import {YaziService} from './service.yazi';
+import {YaziService} from '../service.yazi';
 import { FormGroup , FormControl, Validators,FormBuilder} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {AngularFireDatabase,FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-home',
+  templateUrl: '../view/home.html',
+  styleUrls: []
 })
-export class AppComponent {
+export class HomeComponent {
   title = 'app';
   forms : FormGroup;
   category : FormGroup;
@@ -19,7 +19,7 @@ export class AppComponent {
   
   constructor(private yaziService: YaziService,db: AngularFireDatabase)
   {
-     /* this.items = db.list('/data');
+      this.items = db.list('/data');
       this.categoryList = db.list('/category');
       
       
@@ -34,12 +34,12 @@ export class AppComponent {
       this.category = new FormGroup({
           categoryName : new FormControl(null,),
           
-      });*/
+      });
       
   }
   
  
-  /*
+  
   getList(){
       this.yaziService.getList().subscribe(
       response => {
@@ -83,6 +83,6 @@ export class AppComponent {
       },
       () => {}
   )};
-  */
+  
  
 }
