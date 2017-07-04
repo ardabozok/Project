@@ -1,0 +1,23 @@
+edit
+
+
+	<form [formGroup]="Form">
+		<div>
+		<label>Baslik Adi</label>
+		<input type="text" formControlName="baslik">
+		</div>
+		
+		<div>
+		<label>Yazi</label>
+		<input type="text" formControlName="yazi">
+		</div>
+		
+		<div>
+		<label>Yazar Adi</label>
+		<input type="text" formControlName="yazar">
+		</div>
+	
+	<button type="submit" (click)="updateItem()"> Duzenle</button>
+	</form>
+	
+	<input type="file" (change)="fileEvent($event)" />

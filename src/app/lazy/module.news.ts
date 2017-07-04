@@ -6,18 +6,21 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 
 import { NewsMainComponent } from "../controller/news/component.main";
+import { NewsEditComponent } from "../controller/news/component.edit";
 @NgModule({
 
     imports: [
     CommonModule,
     newsRouting, 
     FormsModule, 
-    HttpModule,      
+    HttpModule,    
+    ReactiveFormsModule
               ],
               
     declarations: [
      
-      NewsMainComponent
+      NewsMainComponent,
+      NewsEditComponent
    ],
 
    providers: [],

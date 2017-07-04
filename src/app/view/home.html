@@ -19,11 +19,11 @@
 		<label>Kategori Adi</label>
 		<input type="text" formControlName="categoryName">
 		</div>
-		
-		
 	
 	<button type="submit" (click)="addCategory()"> Kategori Ekle</button>
 	</form>
+	
+	
 	<h2> Kategoriler</h2>
 	<div *ngIf="list != null" >
 	<div *ngFor="let item of categoryList | async" style="border: 1px solid black;">

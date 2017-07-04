@@ -34,4 +34,9 @@ export class YaziService{
         return this.http.post('https://firstproject-88f3a.firebaseio.com/category.json',yazi).map(res => res);
      }
     
+    getYazi(id:string){
+          
+        return this.http.get('https://firstproject-88f3a.firebaseio.com/data/'+ id).map(res => res);
+    }
+    
 }
