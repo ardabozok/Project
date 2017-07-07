@@ -28,7 +28,9 @@ export class HomeComponent {
       this.forms = new FormGroup({
           baslik : new FormControl(null,),
           yazi: new FormControl(null),
-          yazar : new FormControl(null)
+          yazar : new FormControl(null),
+          img : new FormControl(null),
+          
       });
       
       this.category = new FormGroup({

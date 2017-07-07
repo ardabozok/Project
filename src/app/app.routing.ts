@@ -5,8 +5,8 @@ import { HomeComponent} from './controller/component.home';
 export const appRoutes: Routes = [
 
        {path: 'news' , loadChildren: 'app/lazy/module.news#NewsModule'},
-    /*   {path: 'slider', loadChildren: 'app/lazy/module.slider#SliderModule'},
-       {path: 'category' , loadChildren: 'app/lazy/module.category#CategoryModule'},*/
+       {path: 'slider', loadChildren: 'app/lazy/module.slider#SliderModule'},
+       {path: 'category' , loadChildren: 'app/lazy/module.category#CategoryModule'},
        {path: '**', component:HomeComponent}
                                   
 ];

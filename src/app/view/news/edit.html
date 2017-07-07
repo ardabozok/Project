@@ -1,5 +1,10 @@
 edit
-
+ <ul>
+  <li><a [routerLink]="['/home/']">Home</a></li>
+  <li><a [routerLink]="['/news/home/']">News</a></li>
+  <li><a href="#contact">Slider</a></li>
+  <li><a [routerLink]="['/category/home/']">Category</a></li>
+</ul>
 
 	<form [formGroup]="Form">
 		<div>
@@ -15,6 +20,11 @@ edit
 		<div>
 		<label>Yazar Adi</label>
 		<input type="text" formControlName="yazar">
+		</div>
+		
+		<div>
+		<label>Resim URL</label>
+		<input type="text" formControlName="img">
 		</div>
 	
 	<button type="submit" (click)="updateItem()"> Duzenle</button>

@@ -23,6 +23,7 @@ export class YaziService{
        yazi['baslik'] = form.controls["baslik"].value;
        yazi['yazi'] = form.controls["yazi"].value;
        yazi['yazar'] = form.controls["yazar"].value;
+       yazi['img'] = form.controls["img"].value;
        return this.http.post('https://firstproject-88f3a.firebaseio.com/data.json',yazi).map(res => res);
     } 
     

@@ -25,7 +25,8 @@ export class NewsEditComponent {
         this.Form = new FormGroup({
             baslik : new FormControl(null,),
             yazi: new FormControl(null),
-            yazar : new FormControl(null)
+            yazar : new FormControl(null),
+            img : new FormControl(null),
         });
         
         
@@ -52,6 +53,7 @@ export class NewsEditComponent {
              this.Form.controls["yazi"].setValue(snapshot.val().yazi);
                this.Form.controls["baslik"].setValue(snapshot.val().baslik);
                this.Form.controls["yazar"].setValue(snapshot.val().yazar);
+               this.Form.controls["img"].setValue(snapshot.val().img);
                          }
                
            
@@ -79,6 +81,7 @@ export class NewsEditComponent {
         console.log(this.Form.value.baslik);
         this.items.update(this.id, {baslik: this.Form.value.baslik,
                                     yazi: this.Form.value.yazi,
+                                    img: this.Form.value.img,
                                     yazar: this.Form.value.yazar});
         
       }

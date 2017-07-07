@@ -1,0 +1,17 @@
+category
+ <ul>
+  <li><a [routerLink]="['/home/']">Home</a></li>
+  <li><a [routerLink]="['/news/home/']">News</a></li>
+  <li><a href="#contact">Slider</a></li>
+  <li><a [routerLink]="['/category/home/']">Category</a></li>
+</ul>
+<h2> Kategoriler</h2>
+	
+	<div *ngFor="let item of categoryList | async" style="border: 1px solid black;">
+		<div>
+		
+			{{item.categoryName}}
+		</div>
+		
+	</div>
+	
